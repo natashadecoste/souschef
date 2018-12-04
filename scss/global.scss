@@ -1,36 +1,54 @@
 // global colors and variables here
-@import './settings';
+@import "./settings";
 .sous-chef {
-    .top-bar {
-        .top-bar-left {
-            height: 60px;
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: flex-end;
-            position: relative;
-            align-items: center;
-            .sous-chef-logo {
-                height: 100%;
-                position: absolute;
-                left: 2px;
-                svg {
-                    height: 100%;
-                    width: auto;
-                    .book {
-                        fill: $primary-color;
-                    }
-                    .no-fill {
-                        fill: white;
-                    }
-                }
-            }
-            ul {
-                display: inline;
-            }
+  .top-bar {
+    .top-bar-left {
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-end;
+      position: relative;
+      align-items: center;
+      .sous-chef-logo {
+        height: 100%;
+        position: absolute;
+        left: 2px;
+        svg {
+          height: 100%;
+          width: auto;
+          .book {
+            fill: $primary-color;
+          }
+          .no-fill {
+            fill: white;
+          }
         }
+      }
+      ul {
+        display: inline;
+      }
     }
+  }
+  .column {
     .card {
-        margin: 5px 5px;
+      margin: 5px 5px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.13);
     }
+    &:hover {
+      .card {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15),
+          0 6px 6px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+// responsive code
+@media screen and (max-width: 768px) {
+  .sous-chef-logo svg {
+    text {
+      display: none;
+    }
+  }
 }
