@@ -1,13 +1,36 @@
 // global colors and variables here
-
-$primary-color: #912016;
-
+@import './settings';
 .sous-chef {
     .top-bar {
-        height: 45px;
+        .top-bar-left {
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-end;
+            position: relative;
+            align-items: center;
+            .sous-chef-logo {
+                height: 100%;
+                position: absolute;
+                left: 2px;
+                svg {
+                    height: 100%;
+                    width: auto;
+                    .book {
+                        fill: $primary-color;
+                    }
+                    .no-fill {
+                        fill: white;
+                    }
+                }
+            }
+            ul {
+                display: inline;
+            }
+        }
     }
     .card {
         margin: 5px 5px;
     }
-
 }
