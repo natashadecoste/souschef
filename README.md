@@ -31,14 +31,20 @@ The CLI will prompt you to give your project a name. The template will be downlo
 To manually set up the template, first download it with Git:
 
 ```bash
-git clone https://github.com/zurb/foundation-sites-template projectname
+git clone https://github.com/natashadecoste/souschef.git
 ```
 
 Then open the folder in your command line, and install the needed dependencies:
 
 ```bash
-cd projectname
+cd souschef
 npm install
 ```
 
 Finally, run `npm start` to run the Sass compiler. It will re-run every time you save a Sass file.
+
+**note** it runs on localhost:3000 not 8000
+
+### Page Setup
+ Currently pages are empty starter templates and can be accessed through pages folder 
+ `http://localhost:3000/pages/browse.html`
