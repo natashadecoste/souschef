@@ -48,3 +48,9 @@ Finally, run `npm start` to run the Sass compiler. It will re-run every time you
 ### Page Setup
  Currently pages are empty starter templates and can be accessed through pages folder 
  `http://localhost:3000/pages/browse.html`
+
+Collaborators:
+Natasha 
+Troy
+Nic
+Owen
