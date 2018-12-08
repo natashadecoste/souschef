@@ -44,6 +44,36 @@
   }
 }
 
+form {
+  .form-icons {
+    text-align: center;
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+
+    .input-group-label {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+
+    .input-group-field {
+      border-color: $primary-color;
+    }
+
+    .fa {
+      color: white;
+      width: 1rem; // makes the width of icon labels equal
+    }
+  }
+}
+
+div.row.addrecipe{
+    border solid $primary-color 2px;
+
+}
+
+
 // responsive code
 @media screen and (max-width: 768px) {
   .sous-chef-logo svg {
