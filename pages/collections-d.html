@@ -11,16 +11,17 @@
         <link rel="stylesheet" href="./../css/app.css" />
     </head>
     <script>
-      function search(){
-        if(document.getElementById("search-new").value == "") {
-          // do nothing
-        }
-        else {
-          // redirect to search page
-          location.href = "results.html";
-        }
-  
+
+    function checkCollection(){
+      if(document.getElementById("name-new").value == "") {
+        window.alert("Sorry you didnt enter in a new name!");
       }
+      else {
+        window.alert("Awesome, Created a Collection called " + document.getElementById("name-new").value );
+        location.href = "collections-d.html";
+      }
+
+    }
     </script>
     <body>
         <div class="top-bar">
@@ -62,9 +63,9 @@
                         </div>
                         <h2 style="text-align: center">Dessert Collection</h2>
                         <div class="collections-new">
-                            <input type="text" id="search-new"
+                            <input type="text" id="name-new"
                                 placeholder="Dessert" />
-                            <button type="button" onclick="search()"
+                            <button type="button" onclick="checkCollection()"
                                 class="button">Change Name</button>
                         </div>
                         <div class="off-canvas-wrapper">
