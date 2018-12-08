@@ -1,9 +1,11 @@
 // global colors and variables here
 @import "./settings";
 .sous-chef {
+  font-size: 14px;
+  line-height: 1.2em;
   .top-bar {
     .top-bar-left {
-      height: 60px;
+      height: 20px;
       display: flex;
       flex-direction: row;
       width: 100%;
@@ -27,13 +29,21 @@
       }
       ul {
         display: inline;
+        .active {
+          text-decoration: underline;
+        }
       }
     }
   }
   .column {
     .card {
+      font-size: 14px;
       margin: 5px 5px;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.13);
+      img {
+        height: 200px;
+        min-width: 100%;
+      }
     }
     &:hover {
       .card {
