@@ -13,10 +13,11 @@
   <script>
       function search(){
         if(document.getElementById("search-new").value == "") {
-          window.alert("Sorry you can't create a Collection without a name!");
+          // do nothing
         }
         else {
-          window.alert("Awesome, Created a Collection called " + document.getElementById("name-new").value );
+          // redirect to search page
+          location.href = "results.html";
         }
   
       }
@@ -56,7 +57,7 @@
             </div>
             <div class="search-bar">
               <input type="text" id="search-new"  placeholder="Search for a Recipe"/>
-              <button type="button" onclick="checkCollection()" class="button">Search</button>
+              <button type="button" onclick="search()" class="button">Search</button>
             </div>
             <div class="off-canvas-wrapper">
               <div class="off-canvas-wrapper-inner"
