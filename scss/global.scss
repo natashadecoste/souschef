@@ -1,101 +1,138 @@
 // global colors and variables here
 @import "./settings";
 .sous-chef {
-  font-size: 14px;
-  line-height: 1.2em;
-  .top-bar {
-    .top-bar-left {
-      height: 20px;
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      justify-content: flex-end;
-      position: relative;
-      align-items: center;
-      .sous-chef-logo {
-        height: 100%;
-        position: absolute;
-        left: 2px;
-        svg {
-          height: 100%;
-          width: auto;
-          .book {
-            fill: $primary-color;
-          }
-          .no-fill {
-            fill: white;
-          }
+    font-size: 14px;
+    line-height: 1.2em;
+    .top-bar {
+        .top-bar-left {
+            height: 20px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-end;
+            position: relative;
+            align-items: center;
+            .sous-chef-logo {
+                height: 100%;
+                position: absolute;
+                left: 2px;
+                svg {
+                    height: 100%;
+                    width: auto;
+                    .book {
+                        fill: $primary-color;
+                    }
+                    .no-fill {
+                        fill: white;
+                    }
+                }
+            }
+            ul {
+                display: inline;
+                .active {
+                    text-decoration: underline;
+                }
+            }
         }
-      }
-      ul {
-        display: inline;
-        .active {
-          text-decoration: underline;
+    }
+    .recipe {
+        .description {
+            font-style: italic;
         }
-      }
+        .recipe-content {
+            padding: 2em 0;
+        }
     }
-  }
-  .column {
-    .card {
-      font-size: 14px;
-      margin: 5px 5px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.13);
-      p {
-        height: 2em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      img {
-        height: 200px;
-        min-width: 100%;
-      }
+    .column {
+        .card {
+            font-size: 14px;
+            margin: 5px 5px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.13);
+            p {
+                height: 2em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            img {
+                height: 200px;
+                min-width: 100%;
+            }
+        }
+        &:hover {
+            .card {
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.15);
+            }
+        }
     }
-    &:hover {
-      .card {
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15),
-          0 6px 6px rgba(0, 0, 0, 0.15);
-      }
-    }
+}
+
+input[type="text"]{
+  border: 1px solid #912016;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.13);
+  &::placeholder{
+    color: 
+    #912016;
   }
 }
 
 
 
+.collections-new, .search-bar {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0.5em;
+  input {
+    width: 20em;
+    margin: 0;
 
+  }
+  button.button {
+    margin: 0;
+
+  }
+}
+
+.file-inputs {
+    border: 1px solid #912016;
+    margin-right: 3em;
+}
+
+.input-group {
+    &.wide {
+        display: block;
+    }
+}
 
 form {
-  .form-icons {
-    text-align: center;
-
-    h4 {
-      margin-bottom: 1rem;
+    .form-icons {
+        text-align: center;
+        h4 {
+            margin-bottom: 1rem;
+        }
+        .input-group-label {
+            background-color: $primary-color;
+            border-color: $primary-color;
+        }
+        .input-group-field {
+            border-color: $primary-color;
+        }
+        .fa {
+            color: white;
+            width: 1rem; // makes the width of icon labels equal
+        }
+        ::placeholder {
+            color: #686868;
+        }
     }
-
-    .input-group-label {
-      background-color: $primary-color;
-      border-color: $primary-color;
-    }
-
-    .input-group-field {
-      border-color: $primary-color;
-    }
-
-    .fa {
-      color: white;
-      width: 1rem; // makes the width of icon labels equal
-    }
-    ::placeholder {
-      color: #686868;
-    }
-  }
 }
 
 // responsive code
 @media screen and (max-width: 768px) {
-  .sous-chef-logo svg {
-    text {
-      display: none;
+    .sous-chef-logo svg {
+        text {
+            display: none;
+        }
     }
-  }
 }
