@@ -45,60 +45,188 @@
             </div>
 
             <br />
-
-            <div class="row">
-              <div class="medium-10 large-5 columns">
-                <h2>Create a new recipe</h2>
-                <br>
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-
-                <form>
-                  <div class="row">
-                    <div class="medium-6 columns">
-                      <div class="form-icons">
-                        <div class="input-group">
-                          <input class="input-group-field" type="text" placeholder="Name">
-                        </div>
-
-                        <div class="input-group">
-                          <input class="input-group-field" type="text" placeholder="Discription">
-                        </div>
-                        <div class="imput-group">
-                          <textarea placeholder="Enter ingredients here"></textarea>
-                          <textarea placeholder="Enter instruction steps here"></textarea>
-                        </div>
-
-
-                      </div>
+            <div id="recipe" style="display: none;">
+              <div class="row">
+                <div class="medium-6 columns">
+                  <img id="pic_1" class="thumbnail" src="https://placehold.it/550x550" style="width: 550px; height:550px;"/>
+                  <div class="row small-up-4">
+                    <div class="column">
+                      <img id="pic_2" class="thumbnail" src="https://placehold.it/250x200" style="width: 120px; height: 98px;"/>
                     </div>
-                    <div class="medium-6 columns">
-                      <img src="https://placehold.it/550x550" />
-                      <input type="file" name="pic" accept="image/*">
-                      <div class="input-group">
-                        <select>
-                          <option value="Nothing">Select Collection</option>
-                          <option value="Favorites">Favorites</option>
-                          <option value="Christmas">Christmas</option>
-                        </select>
-                      </div>
+                    <div class="column">
+                      <img id="pic_3" class="thumbnail" src="https://placehold.it/250x200"  style="width: 120px; height: 98px;"/>
+                    </div>
+                    <div class="column">
+                      <img id="pic_4" class="thumbnail" src="https://placehold.it/250x200" style="width: 120px; height: 98px;"/>
+                    </div>
+                    <div class="column">
+                      <img id="pic_5" class="thumbnail" src="https://placehold.it/250x200" style="width: 120px; height: 98px;"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="medium-6 large-5 columns">
+
+                  <h3 id="title"></h3>
+                  <p id="discription"></p>
+                  <p id="ingredients"></p>
+                  <p id="instructions"></p>
+
+
+                  <div class="row">
+                    <div class="small-3 columns">
+                      <label for="middle-label" class="middle">Quantity</label>
+                    </div>
+                    <div class="small-9 columns">
+                      <input
+                        type="text"
+                        id="middle-label"
+                        placeholder="One fish two fish"
+                        />
                     </div>
                   </div>
 
-                  <button class="button">Create Recipe!</button>
-                </form>
-
-                <div class="small secondary expanded button-group">
-                  <a class="button">Facebook</a> <a class="button">Twitter</a>
-                  <a class="button">Instagram</a>
+                  <a href="#" class="button large expanded">Edit Recipe</a>
+                  <div class="small secondary expanded button-group">
+                    <a class="button">Facebook</a> <a class="button">Twitter</a>
+                    <a class="button">Yo</a>
+                  </div>
                 </div>
               </div>
+            </div>
 
+            <div id="addrecipe">
+              <div class="row" id='addrecipe'>
+                <div class="medium-6 columns">
+                  <h3 style='margin-left: 23%;'>Create a New Recipe</h3>
+                  <br>
+                  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+                  <form>
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <div class="form-icons">
+
+                          <div class="input-group">
+                            <input id="title_in" class="input-group-field" type="text" onchange="title_update(event)" placeholder="Name">
+                          </div>
+
+                          <div  class="input-group">
+                            <input id="discription_in"class="input-group-field" type="text" onchange="discription_update(event)" placeholder="Discription">
+                          </div>
+
+                          <div  class="input-group" >
+                            <textarea id="ingredients_in" class="input-group-field" placeholder="Enter ingredients here" onchange="ingredients_update(event)"></textarea>
+                          </div>
+
+                          <div  class="input-group">
+                            <textarea id="instructions_in" class="input-group-field" placeholder="Enter instruction steps here" onchange="instruction_update(event)"></textarea>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <button type="button" onclick="contentswap(event)" class="button expanded">Create Recipe!</button>
+                  </form>
+
+                </div>
+                <div class="small-4 columns">
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <div class="input-group">
+                    <label>Main Photo</label>
+                    <input id='file_1' type="file" accept="image/*" onchange="loadImage_1(event)">
+                  </div>
+
+                  <div class="input-group">
+                    <label>Optional Photo</label>
+                    <input type="file" id='file_2' accept="image/*" onchange="loadImage_2(event)">
+                  </div>
+
+                  <div class="input-group">
+                    <label>Optional Photo</label>
+                    <input type="file" id='file_3' accept="image/*" onchange="loadImage_3(event)">
+                  </div>
+
+                  <div class="input-group">
+                    <label>Optional Photo</label>
+                    <input type="file" id='file_4' accept="image/*" onchange="loadImage_4(event)">
+                  </div>
+
+                  <div class="input-group">
+                    <label>Optional Photo</label>
+                    <input type="file" id='file_5' accept="image/*" onchange="loadImage_5(event)">
+                  </div>
+
+                  <div class="input-group">
+                    <select>
+                      <option value="Nothing">Select Collection</option>
+                      <option value="Favorites">Favorites</option>
+                      <option value="Christmas">Christmas</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
             <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
             <script
               src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
             <script>
-      $(document).foundation();
-    </script>
+
+              var title_update = function(event){
+                var title = document.getElementById('title');
+                title.innerHTML = document.getElementById('title_in').value;
+              }
+
+              var discription_update = function(event){
+                var instruction = document.getElementById('discription');
+                instruction.innerHTML = document.getElementById('discription_in').value;
+              }
+
+              var ingredients_update = function(event){
+                var ingredients = document.getElementById('ingredients');
+                ingredients.innerHTML = "INGREDIENTS <br /> <br />"+ document.getElementById('ingredients_in').value.replace(/\r\n|\r|\n/g,"<br />");
+              }
+
+              var instruction_update = function(event){
+                var instruction = document.getElementById('instructions');
+                instruction.innerHTML = "INSTRUCTIONS <br /> <br />" + document.getElementById('instructions_in').value.replace(/\r\n|\r|\n/g,"<br />");
+              }
+
+              var contentswap = function(event){
+                console.log('it triggered!');
+                document.getElementById('recipe').style = "";
+                document.getElementById('addrecipe').style ="display: none";
+              }
+
+              var loadImage_1 = function(event){
+                var output = document.getElementById('pic_1');
+                output.src = URL.createObjectURL(event.target.files[0]);
+              };
+
+              var loadImage_2 = function(event){
+                var output = document.getElementById('pic_2');
+                output.src = URL.createObjectURL(event.target.files[0]);
+              }
+
+              var loadImage_3 = function(event){
+                var output = document.getElementById('pic_3');
+                output.src = URL.createObjectURL(event.target.files[0]);
+              }
+
+              var loadImage_4 = function(event){
+                var output = document.getElementById('pic_4');
+                output.src = URL.createObjectURL(event.target.files[0]);
+              }
+
+              var loadImage_5 = function(event){
+                var output = document.getElementById('pic_5');
+                output.src = URL.createObjectURL(event.target.files[0]);
+              }
+
+              $(document).foundation();
+            </script>
           </body>
         </html>
