@@ -48,6 +48,13 @@
             font-size: 14px;
             margin: 5px 5px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.13);
+            h4 {
+              width: 100%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+            }
             p {
                 height: 2em;
                 overflow: hidden;
