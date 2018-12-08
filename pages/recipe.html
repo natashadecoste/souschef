@@ -13,6 +13,20 @@
       href="./../css/app.css"
       />
   </head>
+  <script>
+      function checkCollection(){
+        var e = document.getElementById("collection-new");
+        var value = e.options[e.selectedIndex].value;
+        var text = e.options[e.selectedIndex].text;
+        if(value == "") {
+          window.alert("You need to pick a Collection to add to!");
+        }
+        else {
+          window.alert("Awesome, Added to Collection called " + text );
+        }
+  
+      }
+    </script>
   <body>
     <div class="top-bar">
       <div class="top-bar-left">
@@ -123,17 +137,20 @@
                                                                   Collection</h4>
                                                                 <div required
                                                                   class="input-group
-                                                                  wide">
-                                                                  <select>
+                                                                  ">
+                                                                  <select id="collection-new">
                                                                     <option
-                                                                      value="Nothing">Select
+                                                                      value="" selected>Select
                                                                       Collection</option>
                                                                     <option
                                                                       value="Favorites">Dessert</option>
                                                                     <option
                                                                       value="Christmas">Christmas</option>
                                                                   </select>
+                                                                  <button type="button" onclick="checkCollection()"
+                                                                  class="button">add</button>
                                                                 </div>
+
                                                                 <div
                                                                   class="small
                                                                   secondary
